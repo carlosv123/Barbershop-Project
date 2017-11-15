@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Map";
+}
+
+
+<div class="col-md-12">
+    <h3>Current weather Condition in <span data-bind="text:name"></span></h3>
+</div>
+<div class="col-md-12">
+  <h4>  Temperature is <span data-bind="text:main.temp"></span>&deg; F </h4>
+</div>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+@*<h5>2149 s 32nd st, milwaukee Wi 53215</h5>*@
+
+<div id="map"></div>
+<script>
+     function initMap() {
+         var uluru = { lat: 43.005570, lng: -87.954404 };
+       var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 18,
+         center: uluru
+       });
+       var marker = new google.maps.Marker({
+         position: uluru,
+         map: map
+       });
+     }
+     var weather = Object();
+     $(document).ready(function () {
+         //$("button").click(function () { //you can remove the button so they dont have to press the button
+         $.get("@Url.Action("GetWeather", "Home")", function (response) {
+             //response
+             console.log(response);
+             weather = ko.mapping.fromJS(response); //populate the weather object
+             ko.applyBindings(weather)
+         });
+         //});
+     });
+
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGSPA7e_FCyCUuPEAmsTVvBEJpJsy3IZ0&callback=initMap">
+</script>
+</body>
+</html>

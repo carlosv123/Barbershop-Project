@@ -1,0 +1,66 @@
+﻿@model CapStone.Models.Barbershop
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Barbershop</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Haircutprices)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Haircutprices)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Openhours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Openhours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.holyday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.holyday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.holdayDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.holdayDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

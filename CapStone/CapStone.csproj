@@ -353,6 +353,7 @@
     <Content Include="Views\Home\WeatherOrNot.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Api calls\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
